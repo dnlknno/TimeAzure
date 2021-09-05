@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeAzure.Common", "TimeAzure.Common\TimeAzure.Common.csproj", "{74AB7C9D-3F4A-4FCF-8BCE-823ACE616C9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeAzure.Common", "TimeAzure.Common\TimeAzure.Common.csproj", "{74AB7C9D-3F4A-4FCF-8BCE-823ACE616C9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeAzure.Functions", "TimeAzure.Functions\TimeAzure.Functions.csproj", "{9FDBDCAE-2819-443F-9587-C1B93664AD05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeAzure.Functions", "TimeAzure.Functions\TimeAzure.Functions.csproj", "{9FDBDCAE-2819-443F-9587-C1B93664AD05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeAzure.Test", "TimeAzure.Test\TimeAzure.Test.csproj", "{ACB804CC-E76D-4CE9-B7CF-BF1D00948AEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeAzure.Test", "TimeAzure.Test\TimeAzure.Test.csproj", "{ACB804CC-E76D-4CE9-B7CF-BF1D00948AEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
