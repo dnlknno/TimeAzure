@@ -3,14 +3,12 @@ using System;
 
 namespace TimeAzure.Functions.Entities
 {
-    public class TimeEntity : TableEntity
+    public class TimeConsolEntity : TableEntity
     {
         public int IdEmpleado { get; set; }
 
         public DateTime FechaHora { get; set; }
 
-        public int Tipo { get; set; }
-
-        public bool Consolidado { get; set; }
+        public int Minutos { get; set; }
     }
 }

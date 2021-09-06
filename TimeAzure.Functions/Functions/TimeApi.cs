@@ -190,5 +190,47 @@ namespace TimeAzure.Functions.Functions
                 Result = timeEntity
             });
         }
+
+        [FunctionName(nameof(Consolidate))]
+        public static async Task<IActionResult> Consolidate(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "time")] HttpRequest req,
+            [Table("time", Connection = "AzureWebJobsStorage")] CloudTable timeTable,
+            ILogger log)
+        {
+            log.LogInformation("You received the employee's information.");
+
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            Time time = JsonConvert.DeserializeObject<Time>(requestBody);
+
+            /*if (string.IsNullOrEmpty(time.Tipo))
+            {
+                return new BadRequestObjectResult(new Response
+                {
+                    IsSuccess = true,
+                    Message = "The request must have a TaskDescription."
+                });
+            }*/
+
+            TimeEntity timeEntity = new TimeEntity
+            {
+                IdEmpleado = time.IdEmpleado,
+                FechaHora = DateTime.UtcNow,
+                Tipo = time.Tipo,
+                Consolidado = false,
+                ETag = "*",
+                PartitionKey = "TIME",
+                RowKey = Guid.NewGuid().ToString()
+            };
+
+            string message = "The employed entry or exit is stored";
+            log.LogInformation(message);
+
+            return new OkObjectResult(new Response
+            {
+                IsSuccess = true,
+                Message = message,
+                Result = timeEntity
+            }); ;
+        }
     }
 }
